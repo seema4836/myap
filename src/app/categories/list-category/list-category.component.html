@@ -1,0 +1,27 @@
+
+
+<div class="table-container">
+  
+    <table class="table" style="width:40%">
+      <!-- Your table content -->
+      <tr>
+        <th>S.No</th>
+        <th>Category</th>
+        <th colspan="2">Action</th>
+      </tr>
+      <tr *ngFor="let list of categories; index as i;"  >
+        <td>{{i+1}}</td>
+        <td>{{list.cname | titlecase}}</td>
+        <td>  <button class="button is-success">Edit</button></td>
+          <td><button class="button is-danger" (click)="deletecat(list._id)" >Delete</button></td>
+      </tr>
+    </table>
+
+  </div>
+  <button class="button is-success" routerLink="/addcat">Add New Category</button>
+  <br />
+  <br />
+ 
+  <div class="alert alert-success" role="alert" *ngIf="delres">
+    Category Deleted Successfully  !!!
+    </div>

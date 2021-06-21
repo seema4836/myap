@@ -1,0 +1,40 @@
+
+
+
+<div class="table-container">
+  
+    <table class="table" >
+      <!-- Your table content -->
+      <tr>
+        <th>S.No</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Description</th>
+        <th>Images</th>
+        <th colspan="2">Action</th>
+      </tr>
+      <tr *ngFor="let product of products ;index as i" >
+       
+        <!-- {{product | json}} -->
+        <td>{{i+1}}</td>
+        <td>{{product.pname}}</td>
+        <td>{{product.price | currency:"INR":"symbol"}}</td>
+        <td>{{product.description}}</td>
+       
+         <td><img src="{{product.image}}" height="200" width="200"></td>
+        
+        <!-- <span *ngFor="let cat of product;">
+          {{cat | json}}
+        <td>hi</td>
+      </span> -->
+     
+        <td>  <button class="button is-success">Edit</button></td>
+          <td><button class="button is-danger" >Delete</button></td>
+      </tr>
+    </table>
+
+  </div>
+  <button class="button is-success" routerLink="/addcat">Add New Category</button>
+  <br />
+  <br />
+ 

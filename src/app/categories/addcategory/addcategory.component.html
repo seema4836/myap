@@ -1,0 +1,29 @@
+<form #form1="ngForm" style="width:40%;" >
+<div class="field" >
+    <label class="label">Category Name</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Text input" name="cname" ngModel required #cname="ngModel" >
+    </div>
+  </div>
+
+  
+  <div class="field is-grouped">
+    <div class="control">
+      <button type="button" class=" button is-link" (click)="onSubmit(form1)" [disabled]="btnDisabled">Add New</button>
+    </div>
+    <div class="control">
+      <button class="button is-link is-light">Cancel</button>
+    </div>
+  </div>
+</form>
+<div class="notification">
+ 
+</div>
+ <div class="field" style="width:40%;">
+<div class="alert alert-success" role="alert" *ngIf="catres">
+  Category added Successfully in db !!!
+  </div>
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="alreadyexist"  style="width:40%;">
+  Category Already exist in db  !!!
+  </div>
